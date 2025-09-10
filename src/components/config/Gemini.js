@@ -2,7 +2,6 @@
 // Install: npm install openai
 
 import OpenAI from "openai";
-import 'dotenv/config';
 
 const apiKey = process.env.OPENAI_API_KEY;
 
