@@ -3,12 +3,12 @@
 
 import OpenAI from "openai";
 
-const apiKey = process.env.OPENAI_API_KEY;
+const apiKey = "";
 
 // Create client
 const client = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
-const MODEL = process.env.OPENAI_MODEL;
+const MODEL = "gpt-4o-mini";
 
 const generationConfig = {
   temperature: 1,
