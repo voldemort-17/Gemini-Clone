@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.headerDesign {
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loadingBar {
+    border-radius: 9999px;
+    /* full pill shape */
+    border: none;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+    /* light gray fallback */
+}
+
+.loadingBar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            #4b90ff,
+            #9ed7ff,
+            #ffffff,
+            #ff7eb3,
+            #ff5546);
+    background-size: 300% 100%;
+    animation: shimmer 2.5s infinite linear;
+    filter: blur(2px);
+    /* subtle glow */
+}
+
+.scrollHide {
+    overflow-y: scroll;
+    max-height: 77vh;
+}
+
+.scrollHide::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -300% 0;
+    }
+    100% {
+        background-position: 300% 0;
+    }
+}
+
+@layer utilities {
+    .cardDesign {
+        @apply min-h-52 p-4 cursor-pointer rounded-lg relative
+    }
+
+    .cardIconDesign {
+        @apply absolute bottom-3 right-3 w-4 p-2 rounded-[50%]
+    }
+}
